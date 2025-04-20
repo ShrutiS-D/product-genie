@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+:root {
+  --transition-speed: 0.3s;
+}
+
+/* Custom transitions */
+.transition-all {
+  transition: all var(--transition-speed) ease;
+}
+
+.transition-transform {
+  transition: transform var(--transition-speed) ease;
+}
+
+.transition-colors {
+  transition: background-color var(--transition-speed) ease, 
+              color var(--transition-speed) ease,
+              border-color var(--transition-speed) ease;
+}
+
+.transition-opacity {
+  transition: opacity var(--transition-speed) ease;
+}
+
+/* Image loading skeleton */
+.image-skeleton {
+  @apply bg-gradient-to-r from-gray-200 to-gray-300 animate-pulse;
+}
+
+/* Hide scrollbar but allow scrolling */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
